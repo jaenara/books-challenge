@@ -11,9 +11,17 @@ const mainController = {
       })
       .catch((error) => console.log(error));
   },
-  bookDetail: (req, res) => {
+  bookDetail: (req, res) => {    
     // Implement look for details in the database
-    res.render('bookDetail');
+    let idParams = req.params.id
+    let libroSelecionado = null
+    for(let i = 0; i<book.length; i++){
+      if(book[i].id ==idParams){
+        libroSelecionado = book[i]
+      }
+   }
+    
+    res.render('bookDetail',{libroSelecionado: libroSelecionado});//fn cod
   },
   bookSearch: (req, res) => {
     res.render('search', { books: [] });
