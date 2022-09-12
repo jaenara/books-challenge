@@ -53,20 +53,15 @@ const mainController = {
     })
     .catch((error) => console.log(error));
   },
-  deleteBook: (req, res) => {
-    // Implement delete book
-    db.Book.destroy({
-      include: [{ association: 'authors'}],
-      where: {
-        '$authors.BooksAuthors.AuthorId$': '$authors.BooksAuthors.BookId$',
-        id: req.params.id
-      }
-    })
-    .then(() => {
-      res.redirect('/');
-    })
-    .catch((error) => console.log(error));
-  },
+
+  deleteBook: function (req,res) {
+    db.Book.destroy ({ 
+        
+      where: {id: req.params.id} });    
+    res.redirect ('/')
+},
+  
+  
   authors: (req, res) => {
     db.Author.findAll()
     .then((authors) => {

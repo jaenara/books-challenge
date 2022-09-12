@@ -33,7 +33,8 @@
                 Edit
               </button>
             </a>
-            <form method="POST" action="/books/delete/<%= book.id %>?_method=DELETE">
+            <!-- ?_method=DELETE -->
+            <form method="POST" action="/books/delete/<%= book.id %>?_method=DELETE">  
               <button type="submit" class="btn btn-outline-secondary btn-lg px-4" >Delete</button>
             </form>
           </div>

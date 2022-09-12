@@ -10,7 +10,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 app.set('views', 'src/views');
 
-app.use('/bookDetail', mainRouter); //agregago
+app.use('/bookDetail', mainRouter); 
 app.use('/', mainRouter);
 app.use(methodOverride('_method'));
 
